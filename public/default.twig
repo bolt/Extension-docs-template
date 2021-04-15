@@ -98,6 +98,7 @@
                             <span>Fork</span>
                         </a>
                         {% if github.editlink is defined %}
+                        {# deprecated #}
                         <a href="{{ github.editlink }}{{ currentFile }}" class="button is-info is-hidden-touch" aria-label="Edit the contents of this page on GitHub">
                             <span class="icon is-small">
                                 <i class="fab fa-github"></i>
@@ -105,6 +106,15 @@
                             <span>Edit this page</span>
                         </a>
                         {% endif %}
+                        {% if github.branch is defined %}
+                        <a href="https://github.com/{{ github.user }}/{{ github.repo }}/edit/{{ github.branch }}/docs/{{ currentFile }}" class="button is-info is-hidden-touch" aria-label="Edit the contents of this page on GitHub">
+                            <span class="icon is-small">
+                                <i class="fab fa-github"></i>
+                            </span>
+                            <span>Edit this page</span>
+                        </a>
+                        {% endif %}
+
                     {% endif %}
                 </header>
 

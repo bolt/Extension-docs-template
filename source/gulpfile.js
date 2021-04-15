@@ -34,7 +34,7 @@ gulp.task('js', function() {
     // Javascript Webpack Function
     return gulp.src('js/main.js')
         .pipe(webpack({
-            watch: watchBuild,
+            // watch: watchBuild,
             config: require('./webpack.config.js')
         }))
         .pipe(production(uglify()))
@@ -86,7 +86,7 @@ gulp.task('assets', function() {
 
 //=== Setup Server
 
-gulp.task('server', ['sass'], function() {
+gulp.task('server', gulp.series('sass', function() {
 
     // Run LiveReload Server in Development
     if(currentEnv == 'development'){
@@ -100,8 +100,13 @@ gulp.task('server', ['sass'], function() {
         // gulp.watch("build/*.html").on('change', browserSync.reload);
     }
 
-});
+}));
 
 //=== Gulp Default Task
 
-gulp.task('default', ['js', 'assets', 'server']);
+gulp.task('default', gulp.series('sass', 'js', 'assets', function() {
+    if(currentEnv == 'development'){
+        gulp.watch(['scss/**'], gulp.series('sass'));
+    }
+}));
+

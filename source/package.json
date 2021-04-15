@@ -1,13 +1,13 @@
 {
-  "name": "bcms-docs",
-  "version": "1.0.0",
-  "description": "BoltCMS Documentation",
+  "name": "boltcms-docs",
+  "version": "2.0.0",
+  "description": "Bolt CMS Extension Documentation Template",
   "main": "index.js",
   "scripts": {
     "dev": "gulp --env development",
     "prod": "gulp --env production"
   },
-  "author": "Jack Marsh",
+  "author": "Bob den Otter",
   "license": "MIT",
   "dependencies": {
     "bulma": "^0.7.1",
@@ -16,14 +16,14 @@
     "sass-spacing": "^2.0.0"
   },
   "devDependencies": {
+    "@babel/cli": "^7.8.3",
+    "@babel/core": "^7.8.7",
+    "@babel/preset-env": "^7.8.7",
     "autoprefixer": "^8.3.0",
-    "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.0",
-    "babel-loader": "^7.1.2",
-    "babel-preset-env": "^1.6.1",
+    "babel-loader": "^8.2.2",
     "browser-sync": "^2.18.13",
     "cssnano": "^3.10.0",
-    "gulp": "^3.9.1",
+    "gulp": "^4.0",
     "gulp-environments": "^0.1.2",
     "gulp-postcss": "^7.0.0",
     "gulp-sass": "^4.0.1",
@@ -31,10 +31,5 @@
     "gulp-uglify": "^3.0.0",
     "webpack": "^4.6.0",
     "webpack-stream": "^4.0.0"
-  },
-  "babel": {
-    "presets": [
-      "env"
-    ]
   }
 }

@@ -7,6 +7,7 @@
 }
 
 .title{
+    font-family: $family-headings;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -18,6 +19,7 @@
 }
 
 .pagetitle {
+    font-family: $family-headings;
     color: $base;
     font-size: $size-4;
     margin-right: auto;
@@ -30,4 +32,12 @@
 main a {
     text-decoration: underline;
     text-decoration-skip: ink;
+}
+
+.content h1, .content h2, .content h3, .content h4 {
+    font-family: $family-headings;
+}
+
+p.text-muted {
+    font-size: 85%;
 }

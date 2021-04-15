@@ -10,3 +10,20 @@ $search-height: 55px;
    position: absolute;
    left: 0;
 }
+
+#tipue_search_results_count {
+   font-size: 85%;
+   color: #666;
+}
+
+.tipue_search_content_title {
+   font-weight: bold;
+   margin: 1rem 0 0.5rem;
+   font-size: 115%;
+}
+
+.tipue_search_content_url {
+   font-size: 85%;
+   margin: 0.5rem 0 0.5rem;
+   color: #666 !important;
+}

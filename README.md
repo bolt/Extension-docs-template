@@ -11,7 +11,7 @@ To use the template, set it up in your `couscous.yml` configuration file:
 
 ```yaml
 template:
-    url: https://github.com/CouscousPHP/Template-Light
+    url: https://github.com/bolt/Extension-docs-template
 ```
 
 ## Configuration
