@@ -1,0 +1,24 @@
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script>
+var tipuesearch_pages = [
+{%- if menu is iterable -%}
+    {%- for filename, item in menu -%}
+        "{{ baseUrl }}/{{ filename|replace({'.md': '.html'}) }}" {%- if not loop.last %}, {% endif %}
+    {%- endfor -%}
+{%- endif -%}
+];
+</script>
+<script src="{{ baseUrl }}/tipuesearch/tipuesearch_set.js"></script>
+<script src="{{ baseUrl }}/tipuesearch/tipuesearch.min.js"></script>
+<script src="{{ baseUrl }}/js/bundle.js"></script>
+<script>
+    $(document).ready(function() {
+        $('#tipue_search_input').tipuesearch({
+            'mode': 'live',
+            'liveDescription': '#content',
+            'liveContent': '#content'
+        });
+    });
+</script>

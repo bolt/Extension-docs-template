@@ -4,12 +4,15 @@ $sidebar-width: 350px;
 $header-height: 60px;
 
 .docs{
+
     // display: flex;
     min-height: 100vh;
     // width: 100vw;
+
     &.columns.is-gapless {
         margin-bottom: 0;
     }
+
     &__sidebar{
         background: $primary;
         background: linear-gradient(to left, $primary 0%, darken($primary, 10%) 100%);
@@ -18,6 +21,7 @@ $header-height: 60px;
         @include desktop {
             width: $sidebar-width;
         }
+
         &--brand{
             height: $header-height;
             width: 100%;
@@ -35,6 +39,7 @@ $header-height: 60px;
                 right: 1rem;
             }
         }
+
         &--search{
             .control .icon {
                 color: $base;
@@ -55,20 +60,41 @@ $header-height: 60px;
                 @include px(3);
             }
         }
+
         &--menu{
             @include touch {
                 display: none;
             }
+
             $menu-item-color: $white !important;
+
             .menu {
                 @include p(3);
             }
             .sub {
                 padding-left: 0.75em;
                 border-left: 1px solid $white;
-                margin: 0 0.75em;
+                margin: 0 0.75em 0.75rem;
+                font-size: 90%;
+            }
+
+            .sub + .sub {
+                margin-top: -0.75rem;
+            }
+
+            li.sub:last-of-type {
+                margin-bottom: 0.75rem;
+                border: 2px dashed crimson;
+            }
+
+            .divider {
+                margin: 1.5rem .75rem .5rem;
+                font-weight: 700;
+                color: #fff;
+                text-transform: uppercase;
             }
         }
+
         &--footer {
             margin-top: auto;
             @include p(3);
@@ -79,11 +105,13 @@ $header-height: 60px;
             }
         }
     }
+
     &__main{
         // background: $white;
         @include desktop {
             width: calc(100vw - #{$sidebar-width});
         }
+
         &--header{
             z-index: 100;
             background: transparentize($white-ter, 0.03);

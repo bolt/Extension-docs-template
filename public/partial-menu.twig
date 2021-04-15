@@ -1,0 +1,33 @@
+
+{% if menu is iterable %}
+{# Tipue Search form #}
+<div class="docs__sidebar--search">
+    <form action="{{ baseUrl }}/search.html" class="control has-icons-right">
+        <input class="input" type="text" name="q" id="tipue_search_input" pattern=".{3,}" title="At least 3 characters" placeholder="Search…" required>
+        <span class="icon is-small is-right">
+            <i class="icon-search"></i>
+        </span>
+    </form>
+</div>
+{% endif %}
+
+{% if menu is iterable %}
+<div class="docs__sidebar--menu">
+    <nav id="sidebar" class="menu" role="navigation">
+        <ul class="menu-list">
+            {% for filename, item in menu %}
+                {% if item.section|default() %}
+                <li class="divider">{{ item.section }}</li>
+                {% endif %}
+                {% set filename = filename|replace({'.md': '.html'}) %}
+                {% set currentFileMd = currentFile|replace({'.md': '.html'}) %}
+                <li class="{{ item.class|default() }}">
+                    <a href="{{ item.absoluteUrl|default(baseUrl ~ '/' ~ filename) }}" class="{{ filename == currentFileMd ? 'is-active' }}">
+                        {{ item.label|raw }}
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+    </nav>
+</div>
+{% endif %}
