@@ -10,6 +10,7 @@
 
 $base: #2C3E50;
 $brand: #80A2BE;
+$link: #3273dc; // crimson; //  #80A2BE;
 $brand-invert: findColorInvert($brand);
 $secondary: #FF784A;
 $brand-dark: #49698A;
@@ -47,7 +48,7 @@ $grey-lighter: lighten($grey-darker, 12%);
 //=== Set initial font Size
 
 
-$body-size: 16.5px;
+$body-size: 16px;
 
 //=== Sidebar Menu Overides
 
@@ -68,6 +69,7 @@ $breadcrumb-item-active-color: $white;
 $input-border-color: darken($white-ter, 10%);
 $input-hover-border-color: $primary;
 $input-color: lighten($base, 20%);
+$input-placeholder-color: #333;
 
 //== Inline code blocks
 

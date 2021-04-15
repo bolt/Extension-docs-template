@@ -38,6 +38,16 @@ main a {
     font-family: $family-headings;
 }
 
+.content h1 {
+    color: $base;
+}
+
 p.text-muted {
     font-size: 85%;
+}
+
+a.anchor {
+    margin-left: 1rem;
+    text-decoration: none;
+    color: #97a1ac;
 }

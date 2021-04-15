@@ -104,9 +104,9 @@ gulp.task('server', gulp.series('sass', function() {
 
 //=== Gulp Default Task
 
-gulp.task('default', gulp.series('sass', 'js', 'assets', function() {
-    if(currentEnv == 'development'){
-        gulp.watch(['scss/**'], gulp.series('sass'));
-    }
-}));
+if(currentEnv == 'development'){
+    gulp.watch(['scss/**'], gulp.series('sass'));
+}
+
+gulp.task('default', gulp.series('sass', 'js', 'assets'));
 
